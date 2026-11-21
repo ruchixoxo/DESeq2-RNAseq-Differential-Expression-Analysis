@@ -52,6 +52,22 @@ This design accounts for cell-line differences while estimating the treatment-as
 - **ggplot2** – Data visualization
 - **AnnotationDbi** – Gene annotation and ID mapping
 
+
+## Reproducibility
+
+The complete analysis workflow is provided in `DESeq2_Analysis.R`.
+
+To reproduce the analysis:
+
+1. Install R and RStudio.
+2. Download or clone this repository.
+3. Open `DESeq2_Analysis.R` in RStudio.
+4. Set the working directory to the repository folder.
+5. Run the script to perform differential expression analysis, functional enrichment and visualization.
+
+Required CRAN and Bioconductor packages are installed through the script if they are not already available.
+
+
 ## Methodology
 
 ### 1. Data Preparation
@@ -171,6 +187,19 @@ The project includes the following visual outputs:
 | Functional enrichment | GO dot plots |
 | Pathway enrichment | KEGG dot plots |
 
+
+### Visual Outputs
+
+#### 1. PCA Plot
+![PCA Plot](Figures/PCA_Plot.png)
+
+#### 2. Volcano Plot
+![Volcano Plot](Figures/Volcano_Plot.png)
+
+#### 3. Heatmap
+![Heatmap](Figures/Heatmap.png)
+
+
 The GO and KEGG analyses include separate visualizations for all significant, upregulated and downregulated genes.
 
 ## Repository Structure
@@ -203,6 +232,13 @@ DESeq2-RNAseq-Differential-Expression-Analysis/
     ├── KEGG_Upregulated.png
     └── KEGG_Downregulated.png
 ```
+
+## Limitations
+
+- The analysis was performed using a relatively small dataset consisting of eight samples.
+- The findings are based on a single publicly available experimental dataset.
+- Functional enrichment results indicate associations with biological processes and pathways but do not independently establish causality.
+- Some genes could not be mapped to Entrez Gene IDs and were therefore excluded from enrichment analysis.
 
 ## Conclusion
 
